@@ -15,4 +15,7 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 echo "Downloading docker-compose for Airflow 3.0.6"
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/3.0.6/docker-compose.yaml'
 
+echo "Initialize airflow by running : docker compose up airflow-init"
+echo "Start airflow with command : docker compose up -d"
+
 exit 0
