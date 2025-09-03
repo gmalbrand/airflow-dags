@@ -7,9 +7,9 @@ __pycache__/
 *.so
 
 # Airflow docker environment
-./logs 
-./plugins 
-./config
+logs/
+plugins/ 
+config/
 docker-compose.yaml
 .venv
 
