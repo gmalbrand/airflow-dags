@@ -1,0 +1,17 @@
+[tool.ruff]
+line-length = 120
+src=["dags"]
+target-version = "py39"
+select = ["AIR3"]
+fix = true
+exclude = ["dags/.airflowignore"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.isort]
+profile = "black"

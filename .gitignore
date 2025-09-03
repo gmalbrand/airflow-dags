@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+# Airflow docker environment
+./logs 
+./plugins 
+./config
+docker-compose.yaml
+.venv
+
 # Distribution / packaging
 .Python
 build/
