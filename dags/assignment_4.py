@@ -15,11 +15,11 @@ INCREMENT_VAR = "assignment_4_inc"
 INCREMENT_DEFAULT = "0"
 LAST_EXEC_VAR = "assignment_4_last_execution"
 LAST_EXEC_DEFAULT = "2018-01-01"
-GCP_CONNECTION_ID = "gcp_pagila_server_account"
+GCP_CONNECTION_ID = "gcp_pagila_service_account"
 GCP_BUCKET = "pagila_bucket"
 GCP_OBJECT_PREFIX = "pagila/exports/payment_by_day_"
 GCP_BIGQUERY_TABLE = "dilizone.pagila_analytics.pagila_payments"
-PG_CONNECTION_ID = "Pagila"
+PG_CONNECTION_ID = "pg-pagila-database"
 
 with DAG(
     dag_id="assignment_4",
