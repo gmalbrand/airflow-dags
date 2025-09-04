@@ -8,10 +8,11 @@ __pycache__/
 
 # Airflow docker environment
 logs/
-plugins/ 
+#plugins/ 
 config/
 docker-compose.yaml
 .venv
+.ruff*
 
 # Distribution / packaging
 .Python
