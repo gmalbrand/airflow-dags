@@ -28,9 +28,12 @@ with DAG(
     start_date=datetime(2025, 1, 1),
     catchup=False,
     tags=["assignment", "gma", "demo"],
+    default_args={
+        "queue": "faster_queue",
+    },
 ) as dag:
 
-    @task(task_id="get_incremental_variable", task_display_name="Get incremental loading variables")
+    @task(task_id="get_incremental_variable", task_display_name="Get incremental loading variables", queue="default")
     def get_incremental_variable():
         increment = Variable.get(INCREMENT_VAR, default=INCREMENT_DEFAULT)
         if increment == INCREMENT_DEFAULT:
@@ -39,7 +42,7 @@ with DAG(
         if last_execution == LAST_EXEC_DEFAULT:
             Variable.set(LAST_EXEC_VAR, LAST_EXEC_DEFAULT)
 
-    @task(task_id="update_incremental_variable", task_display_name="Update incremental loading variables", trigger_rule="all_success")
+    @task(task_id="update_incremental_variable", task_display_name="Update incremental loading variables", trigger_rule="all_success", queue="default")
     def update_incremental_variable():
         Variable.set(INCREMENT_VAR, str(int(Variable.get(INCREMENT_VAR)) + 1))
         Variable.set(LAST_EXEC_VAR, "{{ ds }}")
