@@ -29,7 +29,7 @@ with DAG(
     catchup=False,
     tags=["assignment", "gma", "demo"],
     default_args={
-        "queue": "faster_queue",
+        "queue": "faster-queue",
     },
 ) as dag:
 
